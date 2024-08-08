@@ -1,0 +1,140 @@
+.header {
+    height: var(--height-header);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 103;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__left {
+        display: flex;
+        align-items: center;
+        &-logo {
+            display: flex;
+        }
+        &-line {
+            height: 66px;
+            width: 1px;
+            background-color: var(--color-blue-b);
+            margin: 0 32px;
+        }
+        &-menu {
+            @include midobj(true);
+            li {
+                padding: 7px 13.5px;
+                a {
+                    position: relative;
+                    @include transition(0.4);
+                    @include text(
+                        DMSm,
+                        var(--fs-menu),
+                        var(--lh-menu),
+                        var(--lsp-menu),
+                        var(--color-white),
+                        var(--text-trans)
+                    );
+                    &.--active {
+                        &::after {
+                            width: 100%;
+                        }
+                    }
+                    &::after {
+                            content: "";
+                            position: absolute;
+                            background: var(--color-white);
+                            height: 1px;
+                            bottom: 0;
+                            left: 0;
+                            @include transition(0.4);
+                        }
+                    &:hover{
+                        color: var(--text-hover);
+                        &::after {
+                            width: 100%;
+                            background: var(--text-hover);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .btndownload {
+        @include transition(0.4s);
+        &:hover {
+            background: var(--btn-hover-blue);
+        }
+    }
+    &__right {
+        display: flex;
+        align-items: center;
+        &-menu {
+            display: none;
+            position: relative;
+            .background {
+                width: 45px;
+                height: 45px;
+                background: var(--color-blue);
+                border-radius: 100px;
+                z-index: 104;
+            }
+            .icon {
+                z-index: 105;
+                width: 25px;
+                height: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                border-radius: 100px;
+                cursor: pointer;
+                @include midobj;
+                span {
+                    width: 100%;
+                    background: var(--color-white);
+                    height: 2px;
+                    transition: all 0.4s ease;
+                }
+            }
+            &.active {
+                span {
+                    &:nth-child(1) {
+                        transform: rotate(45deg) translate(7px, 6px);
+                    }
+                    &:nth-child(2) {
+                        opacity: 0; /* Ẩn gạch giữa */
+                    }
+                    &:nth-child(3) {
+                        transform: rotate(-45deg) translate(7px, -6px);
+                    }
+                }
+            }
+        }
+    }
+    &.none {
+        .header__left-line,
+        .header__left-menu {
+            display: none;
+        }
+        .header__right .btndownload {
+            display: none;
+        }
+    }
+    &.bg-change{
+        background: linear-gradient(#031b88, transparent);
+    }
+    @include md{
+        .header__left-line, .header__left-menu{
+            display: none;
+        }
+        .header__right .btndownload{
+            display: none;
+        }
+        .header__right-menu{
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.errorpage {
+    padding-top: 292px;
+    padding-bottom: 219px;
+    position: relative;
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    &__title {
+        margin-bottom: 40px;
+        &-num {
+            color: var(--blue, #0328ee);
+            text-align: center;
+            @include text(DMSb, 180px, 160px, 0, var(--color-blue), var(--text-trans));
+            margin-bottom: 15px;
+        }
+        .textbox{
+            text-align: center;
+            .heading{
+                margin-bottom: 16px;
+            }
+            .text{
+                max-width: 557px;
+            }
+        }
+    }
+    .button {
+        display: flex;
+        gap: 24px;
+    }
+    .blur{
+        position: absolute;
+        @include midobj;
+        z-index: -1;
+    }
+}

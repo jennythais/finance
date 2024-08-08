@@ -1,0 +1,123 @@
+.pricepage {
+    .pricing {
+        padding-top: var(--pdt);
+        padding-bottom: var(--pdb);
+        &__content {
+            margin-bottom: 40px;
+            .textbox {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .text {
+                    margin-top: 16px;
+                    max-width: 568px;
+                    text-align: center;
+                }
+            }
+        }
+        &__icon {
+            margin-bottom: 56px;
+            display: flex;
+            justify-content: space-between;
+            &-item {
+                font-family: DMSr;
+                font-size: 18px;
+                line-height: 32px;
+                color: var(--color-white);
+                display: flex;
+                align-items: center;
+                gap: 24px;
+            }
+        }
+        &__list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--gap);
+            &-card {
+                padding: 48px 30px 42px 32px;
+                background: var(--color-blue-d);
+                border-radius: 40px;
+                @include flex-col-start;
+                gap: 40px;
+                .title {
+                    @include flex-col-start;
+                    gap: 16px;
+                    &__tag {
+                        background: var(--color-blue);
+                        padding: 9px 14px;
+                        border-radius: 100px;
+                        @include midobj(true);
+                        @include text(DMSm, 14px, 18px, 0.7px, var(--color-white), var(--text-trans));
+                    }
+                }
+                .features {
+                    @include flex-col-start;
+                    align-self: stretch;
+                    gap: 54px;
+                    &__text {
+                        @include flex-col-start;
+                        gap: 16px;
+                        p {
+                            @include text(DMSb, 18px, 26px, 0.9px, var(--color-white), var(--text-trans));
+                        }
+                        ul {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 16px;
+                            padding-left: 0;
+                            li {
+                                @include text(DMSr, 18px, 20px, 0, var(--color-white), none);
+                                position: relative;
+                                padding-left: 16px;
+                                &::before {
+                                    content: "";
+                                    position: absolute;
+                                    left: 0;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    width: 6px;
+                                    height: 6px;
+                                    border-radius: 50%;
+                                    background-color: var(--color-blue)
+                                }
+                            }
+                        }
+                    }
+                    .btncontact{
+                        display: flex;
+                        align-self: stretch;
+                        align-items: center;
+                        justify-content: center;
+                        @include transition(0.4s);
+                        &:hover{
+                            background: var(--btn-hover-blue);
+                        }
+                    }
+                }
+            }
+        }
+        @include sm{
+            &__icon{
+                flex-direction: column;
+                gap: 38px;
+            }
+            &__list{
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        @include xs{
+            &__content{
+                .textbox{
+                    justify-content: initial;
+                    align-items: initial;
+                    .text{
+                        max-width: initial;
+                        text-align: unset;
+                    }
+                }
+            }
+        }
+    }
+}

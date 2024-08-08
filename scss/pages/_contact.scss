@@ -1,0 +1,259 @@
+.contactpage {
+    padding-top: var(--pdt-p-contact);
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto;
+        gap: var(--gap);
+        .textbox {
+            grid-column: 1/6;
+            grid-row: 1/2;
+            max-width: 100%;
+        }
+        &-form {
+            grid-column: 1/9;
+            .inputgr {
+                position: relative;
+                input,
+                textarea {
+                    background: var(--color-blue-d);
+                    padding: 20.5px 25px;
+                    color: var(--color-white);
+                    font-family: DMSb;
+                    font-size: var(--fs-label);
+                    line-height: var(--lh-label);
+                    letter-spacing: var(--lsp-label);
+                    color: var(--color-white);
+                }
+                input {
+                    border-radius: 100px;
+                    max-width: 364px;
+                    font-family: DMSr;
+                }
+                textarea {
+                    border-radius: 14px;
+                    width: 100%;
+                    overflow: hidden;
+                    resize: none;
+                    height: 162px;
+                }
+                ::placeholder {
+                    font-family: DMSr;
+                    font-size: 18px;
+                    line-height: 27px;
+                    color: var(--color-white);
+                }
+                p {
+                    font-family: DMSb;
+                    font-size: var(--fs-label);
+                    line-height: var(--lh-label);
+                    letter-spacing: var(--lsp-label);
+                    color: var(--color-white);
+                    text-transform: var(--text-trans);
+                }
+
+                &.--flex {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 25px;
+                    .inputgr__item {
+                        &.--email {
+                            p {
+                                left: 53%;
+                            }
+                        }
+                        &.--sub{
+                            p {
+                                left: 53%;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(1),
+                &:nth-child(2) {
+                    margin-bottom: 50px;
+                }
+                &__item {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+                    .error {
+                        color: #EE0303;
+                        position: absolute;
+                        bottom: -30px;
+                        left: 0px;
+                        visibility: hidden;
+                        font-size: 18px;
+                        font-family: DMSr;
+                        text-transform: none;
+                    }
+                }
+                #message {
+                    margin-top: 12px;
+                }
+            }
+            .btnsend {
+                padding: 27px 32px;
+                color: var(--color-white);
+                background: var(--color-blue);
+                width: fit-content;
+                font-family: DMSb;
+                font-size: var(--fs-button);
+                line-height: var(--lh-button);
+                letter-spacing: var(--lsp-button);
+                color: var(--color-white);
+                text-transform: var(--text-trans);
+                border-radius: 80px;
+                margin-top: 52px;
+                cursor: pointer;
+                @include transition(0.4s);
+                &:hover{
+                    background: var(--btn-hover-blue);
+                }
+            }
+        }
+        &-social {
+            grid-column: 9/13;
+            .textbox {
+                margin-bottom: 32px;
+            }
+            .contact {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                &__item {
+                    font-family: DMSm;
+                    font-size: 18px;
+                    line-height: 29px;
+                    color: var(--color-white);
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                }
+            }
+        }
+    }
+    &__faqs {
+        margin: 120px 0;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto;
+        gap: var(--gap);
+        .textbox {
+            grid-column: 6/8;
+            grid-row: 1/2;
+            margin-left: 25px;
+            margin-bottom: 80px;
+        }
+        &-list {
+            grid-row: 2/3;
+            grid-column: 3/11;
+            margin: 0 -42px;
+            .accordion {
+                &__content {
+                    @include transition(0.4s);
+                    cursor: pointer;
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.2);
+                    }
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                    padding: 32px 8px;
+                    &-title {
+                        background: transparent;
+                        text-align: left;
+                        outline: none;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        h3 {
+                            font-family: DMSb;
+                            font-size: var(--fs-year);
+                            line-height: var(--lh-year);
+                            letter-spacing: var(--lsp-year);
+                            color: var(--color-white);
+                        }
+                        @include animation(0.4s);
+                        .icon {
+                            width: 27px;
+                            height: 27px;
+                            position: relative;
+                            @include transition(0.4s);
+                            &::after {
+                                content: "";
+                                height: 100%;
+                                width: 1px;
+                                background: var(--color-white);
+                                position: absolute;
+                                right: 50%;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                @include transition(0.4s);
+                            }
+                            &::before {
+                                content: "";
+                                height: 1px;
+                                width: 100%;
+                                background: var(--color-white);
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                @include transition(0.4s);
+                            }
+                        }
+                    }
+                    &-text {
+                        font-family: DMSr;
+                        font-size: var(--fs-bd1);
+                        line-height: var(--lh-bd1);
+                        color: var(--color-white);
+                        display: none;
+                        margin-top: 30px;
+                        @include transition(0.4s);
+                    }
+                    &.--active {
+                        .accordion__content-title {
+                            .icon {
+                                &::after {
+                                    opacity: 0;
+                                    transition: opacity 0.3s ease;
+                                }
+                            }
+                        }
+                        .accordion__content-text {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include md{
+        &__content{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    @include sm{
+        &__content{
+            &-form{
+                display: flex;
+                flex-direction: column;
+                .inputgr{
+                    &.--flex{
+                        flex-direction: column;
+                        align-items: initial;
+                        justify-content: initial;
+
+                    }
+                    &:nth-child(1), &:nth-child(2){
+                        margin-bottom: 32px;
+                    }
+                }
+            }
+        }
+    }
+}

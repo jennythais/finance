@@ -1,0 +1,147 @@
+.tokenpage {
+    .token {
+        padding-top: var(--pdt-p-token);
+        padding-bottom: var(--pdb-p-token);
+        &__content {
+            margin-bottom: 101px;
+            .textbox{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .text{
+                    max-width: 568px;
+                    text-align: center;
+                }
+            }
+        }
+        &__table {
+            &-row {
+                display: grid;
+                grid-template-columns: 2.5fr 2.5fr 2fr 2fr 1fr;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+                &:nth-child(1) {
+                    @include text(DMSb, 16px, 18px, 1px, var(--color-white), var(--text-trans));
+                    p{
+                        padding-top: 39.5px;
+                        padding-bottom: 41.5px;
+                    }
+                }
+                .name {
+                    display: flex;
+                    gap: 16px;
+                    align-items: center;
+                    padding-top: 43px;
+                    padding-bottom: 44px;
+                    &__coin {
+                        @include text(DMSb, 18px, 20px, 0, var(--color-white), none);
+                    }
+                    &__tag {
+                        background: var(--color-blue-d);
+                        border-radius: 100px;
+                        padding: 7px 8px;
+                        @include text(DMSm, 12px, 12px, 0.6px, var(--color-white), none);
+                    }
+                }
+                .des,
+                .website {
+                    display: flex;
+                    align-items: center;
+                    @include text(DMSr, 16px, 26px, 0px, var(--color-white), none);
+                }
+                .market,
+                .volume {
+                    display: flex;
+                    align-items: center;
+                    @include text(DMSb, 16px, 26px, 0px, var(--color-white), none);
+                }
+                .website {
+                    text-decoration: underline;
+                }
+            }
+        }
+        @include sm{
+            &__content{
+                margin-bottom: 48px;
+            }
+            &__table{
+                &-row{
+                    display: block;
+                    &:nth-child(1), &:nth-child(3), &:nth-child(4), &:nth-child(5){
+                        display: none;
+                    }
+                    .name, .des, .market, .volume, .website{
+                        position: relative;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+                        padding: 32px 0;
+                    }
+                    .name{
+                        margin-bottom: 32px;
+                        &::before{
+                            content: attr(data-title);
+                            position: absolute;
+                            color: white;
+                            top: 0;
+                            left: 0;
+                            @include text(DMSb, 16px, 18px, 0.96px, var(--color-white), var(--text-trans));
+                        }
+                    }
+                    .des{
+                        margin-bottom: 32px;
+                        &::before{
+                            content: attr(data-title);
+                            position: absolute;
+                            color: white;
+                            top: 0;
+                            left: 0;
+                            @include text(DMSb, 16px, 18px, 0.32px, var(--color-white), var(--text-trans));
+                        }
+                    }
+                    .market{
+                        margin-bottom: 32px;
+                        &::before{
+                            content: attr(data-title);
+                            position: absolute;
+                            color: white;
+                            top: 0;
+                            left: 0;
+                            @include text(DMSb, 16px, 18px, 0.32px, var(--color-white), var(--text-trans));
+                        }
+                    }
+                    .volume{
+                        margin-bottom: 32px;
+                        &::before{
+                            content: attr(data-title);
+                            position: absolute;
+                            color: white;
+                            top: 0;
+                            left: 0;
+                            @include text(DMSb, 16px, 18px, 0.32px, var(--color-white), var(--text-trans));
+                        }
+                    }
+                    .website{
+                        &::before{
+                            content: attr(data-title);
+                            position: absolute;
+                            color: white;
+                            top: 0;
+                            left: 0;
+                            @include text(DMSb, 16px, 18px, 0.32px, var(--color-white), var(--text-trans));
+                        }
+                    }
+                }
+            }
+        }
+        @include xs{
+            &__content{
+                .textbox{
+                    align-items: initial;
+                    .text{
+                        margin-top: 16px;
+                        max-width: initial;
+                        text-align: initial;
+                    }
+                }
+            }
+        }
+    }
+}

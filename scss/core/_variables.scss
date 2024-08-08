@@ -1,0 +1,175 @@
+:root {
+    --gap: 26px;
+    --pd-container: 28px;
+    --max-width-page: 2560px;
+    --container-max-width: calc(1198px + var(--pd-container) * 2);
+    --padding-left: calc(((100vw - var(--container-max-width)) - (var(--pd-container) / 2)) / 2);
+    /* Color */
+    --color-blue: #0328ee;
+    --color-white: #ffffff;
+    --color-blue-b: #010725;
+    --color-blue-d: #010d50;
+    --color-black: #000000;
+
+    --btn-hover-blue: #031fb4;
+    --btn-hover-blur: #0328ee;
+    --btn-hover-white: #031fb4;
+    --text-hover: #cccbcb;
+    /* Typography */
+    /* Desktop */
+    --fs-h1: 6.6rem;
+    --lh-h1: 8rem;
+    --lsp-h1: -0.1rem;
+
+    --fs-h2: 4.2rem;
+    --lh-h2: 5.5rem;
+    --lsp-h2: -0.042rem;
+
+    --fs-label: 1.8rem;
+    --lh-label: 2.6rem;
+    --lsp-label: 0.09rem;
+
+    --fs-button: 1.6rem;
+    --lh-button: 1.6rem;
+    --lsp-button: 0.16rem;
+
+    --fs-bd1: 1.8rem;
+    --lh-bd1: 3.2rem;
+
+    --fs-bd2: 1.6rem;
+    --lh-bd2: 2.6rem;
+
+    --fs-menu: 1.4rem;
+    --lh-menu: 1.6rem;
+    --lsp-menu: 0.14rem;
+
+    --fs-tag: 1.4rem;
+    --lh-tag: 1.8rem;
+    --lsp-tag: 0.07rem;
+
+    --fs-year: 2.8rem;
+    --lh-year: 0.3rem;
+    --lsp-year: 0.028rem;
+
+    --fs-h4: 2.2rem;
+    --lh-h4: 3.1rem;
+    --lsp-h4: 0.022rem;
+
+    --text-trans: uppercase;
+
+    --height-btnproduct: 36px;
+
+    --padding-explore: 110px;
+    --pdt-token: 138px;
+    --pdb-token: 212px;
+    --pdt-user: 200px;
+    --pdt-start: 159px;
+    --pdb-start: 170px;
+    --pd-download: 120px;
+    /* Height */
+    --height-header: 86px;
+    --height-button: 4.4rem;
+    --height-button-arrow: 3.446rem;
+    /* Padding section */
+    --pd-section: 120px;
+    /* About */
+    --pdt-title: calc(var(--height-header) + 60px);
+    --pdb-title: 112px;
+    --pdt-our: 232px;
+    --pdb-our: 179px;
+    --pdt-team: 120px;
+    --pdt-investors: 127px;
+    --pdb-investors: 230px;
+    /* Pricing */
+    --pdt: calc(var(--height-header) + 40px);
+    --pdb: 225px;
+    /* Token */
+    --pdt-p-token: calc(var(--height-header) + 60px);
+    --pdb-p-token: 120px;
+    /* Blog */
+    --pdt-p-blog: calc(var(--height-header) + 70px);
+    --pdb-p-blog: 80px;
+    --pdt-p-detail: calc(var(--height-header) + 64px);
+    /* Contact */
+    --pdt-p-contact: calc(var(--height-header) + 80px);
+    --pdb-p-contact: 120px;
+    /* Time duration */
+    transition: 0.4;
+    /* Responsive */
+    @include lg {
+        --container-max-width: 1198px;
+    }
+    @include md {
+        --container-max-width: 1140px;
+    }
+    @include sm {
+        --container-max-width: 960px;
+        --height-header: 73px;
+        /* Home */
+        --padding-explore: 55px;
+        --pdt-token: 69px;
+        --pdb-token: 106px;
+        --pdt-user: 100px;
+        --pdt-start: 79.5px;
+        --pdb-start: 85px;
+        --pd-download: 60px;
+        /* About */
+        --pdt-title: calc(var(--height-header) + 48px);
+        --pdb-title: 48px;
+        --pdt-our: 44px;
+        --pdb-our: 80px;
+        --pdt-team: 80px;
+        --pdt-investors: 80px;
+        --pdb-investors: 80px;
+        /* Pricing */
+        --pdt: calc(var(--height-header) + 48px);
+        --pdb: 80px;
+        /* Token */
+        --pdt-p-token: calc(var(--height-header) + 48px);
+        --pdb-p-token: 80px;
+        /* Blog */
+        --pdt-p-blog: calc(var(--height-header) + 48px);
+        --pdb-p-blog: 80px;
+        // Hero
+        --pdt-hero: calc(var(--height-header) + 48px);
+    }
+    @include xs {
+        --container-max-width: 100%;
+        --gap: 15px;
+
+        --fs-h1: 3.8rem;
+        --lh-h1: 4.6rem;
+        --lsp-h1: -0.1rem;
+
+        --fs-h2: 2.8rem;
+        --lh-h2: 3.6rem;
+
+        --fs-label: 1.4rem;
+        --lh-label: 1.8rem;
+        --lsp-label: 0.07rem;
+
+        --fs-button: 1.6rem;
+        --lh-button: 1.6rem;
+        --lsp-button: 0.16rem;
+
+        --fs-bd1: 1.6rem;
+        --lh-bd1: 2.6rem;
+
+        --fs-bd2: 1.6rem;
+        --lh-bd2: 2.6rem;
+
+        --fs-menu: 3.2rem;
+        --lh-menu: 100%;
+        --lsp-menu: 0.14rem;
+
+        --fs-tag: 1.4rem;
+        --lh-tag: 1.8rem;
+        --lsp-tag: 0.07rem;
+    }
+    @include xxs {
+        --container-max-width: 100%;
+    }
+    @include xxxs {
+        --container-max-width: 100%;
+    }
+}
